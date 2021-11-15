@@ -62,7 +62,9 @@ function _mergeObjectsReanimated() {
   'worklet';
   // we can't use rest parameters in worklets at the moment
   // eslint-disable-next-line prefer-rest-params
-  return Object.assign.apply(null, arguments);
+  // return Object.assign.apply(null, arguments);
+  // eslint-disable-next-line prefer-rest-params
+  return apply({ ...arguments });
 }
 
 global.__reanimatedWorkletInit = function (worklet) {
