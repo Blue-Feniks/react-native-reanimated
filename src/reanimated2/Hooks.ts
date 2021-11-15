@@ -404,7 +404,8 @@ function jestStyleUpdater(
 
   // calculate diff
   const diff = styleDiff(oldValues, newValues);
-  state.last = Object.assign({}, oldValues, newValues);
+  // state.last = Object.assign({}, oldValues, newValues);
+  state.last = { ...oldValues, ...newValues };
 
   if (Object.keys(diff).length !== 0) {
     updatePropsJestWrapper(
